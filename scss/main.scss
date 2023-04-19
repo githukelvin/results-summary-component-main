@@ -1,0 +1,191 @@
+@forward "./partials/";
+@use "./partials/fonts" as *;
+@use "./partials/color" as *;
+$radius:30px;
+$size:130px;
+// lets Start  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+}
+// we start mobile design 375px  
+// lets use  firefox browser  FOR  THIS it is a great tool
+// we have both browsers to compare
+// lets start styling
+@mixin desktop{
+    @media (min-width:1440px) {
+        @content;
+    }
+}
+.wrap{
+    width: 90%;
+    margin-inline: auto;
+    @include desktop{
+        width: 100%;
+        max-width: 1440px;
+    }
+
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+
+    @include desktop{
+        display: flex;
+        flex-direction: row;
+       position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    }
+
+    .top{
+        background: linear-gradient(to bottom,$Lightslatebluebackground,$Lightroyalbluebackground);
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+        @include desktop{
+            border-radius: $radius;
+            width: 300px;
+        }
+    }
+    .bottom{
+        @include desktop{
+            padding: 1em;
+        }
+        .wrap{
+            width: 85%;
+            @include desktop{
+                width: 100%;
+            }
+            h2{
+                color: $Darkgrayblue;
+                font-family: 'bold';
+                font-size: 1.2em;
+                margin-block: 1.1em;
+                // font-weight: 450;
+            }
+            .divs{
+                display: flex;
+                flex-direction: column;
+                    gap: 1em;
+                .div{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 1em .5em;
+                    border-radius: 10px;
+                    text-transform: capitalize;
+                    // background: $Violetbluecircle;
+                    div{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        p{
+
+                            font-family: 'Medium';
+                            font-size: 1em;
+                            
+                        }
+                    }
+                    .par{
+                        font-family:'Bold' ;
+                        color: $Darkgrayblue;
+                        span{
+                            color: $Lightlavender;
+                        }
+                    }
+                }
+                @mixin paras($color){
+                    background: rgba($color, .1);
+                    color: $color;
+                }
+                .Reaction {
+                    @include paras($ightred)
+                }
+                .Memory{
+                    @include paras($Orangeyyellow)
+                } 
+                .Verbal{
+                    @include paras($Greenteal)
+                } 
+                .Visual{
+                   @include paras($Cobaltblue)
+                }
+            }
+        }
+    }
+}
+.content1{
+    display: grid;
+    place-items: center;
+    p{
+        color: $Lightlavender;
+    }
+    .ptop{
+        font-family: 'Bold';
+        margin-block: 1em;
+        font-size: 1.3em;
+
+    }
+    .circle{
+        background: linear-gradient(to bottom,$Violetbluecircle,$Persianbluecircle);
+        border-radius: 50%;
+        width: $size;
+        height:$size ;
+        display: grid;
+        place-items: center;
+        p{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            font-family: 'ExtraBold';
+            color: $White;
+            font-size: 3.2em;
+            span {
+                font-family: 'medium';
+                color:$Lightlavender;
+                font-size: smaller;
+                font-size: .3em;
+                padding-left: 10px;
+                margin-top: 5px;
+            }
+            
+        }
+        margin-bottom: 1em;
+    }
+    .pbto{
+        color: $Paleblue;
+        margin-block: 1em;
+        text-transform: capitalize;
+        font-family: 'Extrabold';
+        font-size: 1.3em;
+
+    }
+    .last{
+       font-family: 'medium';
+       width: 75%;
+       padding-bottom: 2em;
+       @include desktop{
+        text-align: center;
+       }
+    }
+}
+.btn{
+    margin-block: 1em;
+    width: 85%;
+    button{
+        border-radius: 30px;
+        padding: .9em 7em;
+        color: $White;
+        font-family: 'Medium';
+        background: $Darkgrayblue;
+        font-size: 1.1em;
+        cursor: pointer;
+        &:hover{
+            background: linear-gradient(to bottom, $Lightslatebluebackground,$Lightroyalbluebackground);
+        }
+    }
+}

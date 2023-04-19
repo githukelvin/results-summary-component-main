@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "Bold";
+  src: url("../assets/fonts/static/HankenGrotesk-Bold.woff2") format("woff2"), url("../assets/fonts/static/HankenGrotesk-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ExtraBold";
+  src: url("../assets/fonts/static/HankenGrotesk-ExtraBold.woff2") format("woff2"), url("../assets/fonts/static/HankenGrotesk-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Medium";
+  src: url("../assets/fonts/static/HankenGrotesk-Medium.woff2") format("woff2"), url("../assets/fonts/static/HankenGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: none;
+}
+
+.wrap {
+  width: 90%;
+  margin-inline: auto;
+}
+@media (min-width: 1440px) {
+  .wrap {
+    width: 100%;
+    max-width: 1440px;
+  }
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1440px) {
+  .contents {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.contents .top {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+@media (min-width: 1440px) {
+  .contents .top {
+    border-radius: 30px;
+    width: 300px;
+  }
+}
+@media (min-width: 1440px) {
+  .contents .bottom {
+    padding: 1em;
+  }
+}
+.contents .bottom .wrap {
+  width: 85%;
+}
+@media (min-width: 1440px) {
+  .contents .bottom .wrap {
+    width: 100%;
+  }
+}
+.contents .bottom .wrap h2 {
+  color: hsl(224, 30%, 27%);
+  font-family: "bold";
+  font-size: 1.2em;
+  margin-block: 1.1em;
+}
+.contents .bottom .wrap .divs {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.contents .bottom .wrap .divs .div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 0.5em;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+.contents .bottom .wrap .divs .div div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.contents .bottom .wrap .divs .div div p {
+  font-family: "Medium";
+  font-size: 1em;
+}
+.contents .bottom .wrap .divs .div .par {
+  font-family: "Bold";
+  color: hsl(224, 30%, 27%);
+}
+.contents .bottom .wrap .divs .div .par span {
+  color: hsl(241, 100%, 89%);
+}
+.contents .bottom .wrap .divs .Reaction {
+  background: rgba(255, 87, 87, 0.1);
+  color: hsl(0, 100%, 67%);
+}
+.contents .bottom .wrap .divs .Memory {
+  background: rgba(255, 176, 31, 0.1);
+  color: hsl(39, 100%, 56%);
+}
+.contents .bottom .wrap .divs .Verbal {
+  background: rgba(0, 189, 145, 0.1);
+  color: hsl(166, 100%, 37%);
+}
+.contents .bottom .wrap .divs .Visual {
+  background: rgba(17, 37, 212, 0.1);
+  color: hsl(234, 85%, 45%);
+}
+
+.content1 {
+  display: grid;
+  place-items: center;
+}
+.content1 p {
+  color: hsl(241, 100%, 89%);
+}
+.content1 .ptop {
+  font-family: "Bold";
+  margin-block: 1em;
+  font-size: 1.3em;
+}
+.content1 .circle {
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1em;
+}
+.content1 .circle p {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  font-family: "ExtraBold";
+  color: hsl(0, 0%, 100%);
+  font-size: 3.2em;
+}
+.content1 .circle p span {
+  font-family: "medium";
+  color: hsl(241, 100%, 89%);
+  font-size: smaller;
+  font-size: 0.3em;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+.content1 .pbto {
+  color: hsl(221, 100%, 96%);
+  margin-block: 1em;
+  text-transform: capitalize;
+  font-family: "Extrabold";
+  font-size: 1.3em;
+}
+.content1 .last {
+  font-family: "medium";
+  width: 75%;
+  padding-bottom: 2em;
+}
+@media (min-width: 1440px) {
+  .content1 .last {
+    text-align: center;
+  }
+}
+
+.btn {
+  margin-block: 1em;
+  width: 85%;
+}
+.btn button {
+  border-radius: 30px;
+  padding: 0.9em 7em;
+  color: hsl(0, 0%, 100%);
+  font-family: "Medium";
+  background: hsl(224, 30%, 27%);
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.btn button:hover {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}/*# sourceMappingURL=main.css.map */
