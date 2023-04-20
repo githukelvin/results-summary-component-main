@@ -16,7 +16,7 @@ $size:130px;
 // we have both browsers to compare
 // lets start styling
 @mixin desktop{
-    @media (min-width:1440px) {
+    @media (min-width:800px) {
         @content;
     }
 }
@@ -32,20 +32,30 @@ $size:130px;
 .contents{
     display: flex;
     flex-direction: column;
+    background: transparent;
+
 
     @include desktop{
         display: flex;
         flex-direction: row;
        position: absolute;
+       background: #fff;
     top: 50%;
     left: 50%;
+    margin-top: 4em;
     transform: translate(-50% ,-50%);
+    box-shadow:
+            3.6px 6.1px 1.8px rgba(0, 0, 0, 0.065),
+            4.4px 7.5px 6px rgba(0, 0, 0, 0.095),
+            14px 24px 27px rgba(0, 0, 0, 0.16);
+    border-radius: $radius;
     }
 
     .top{
         background: linear-gradient(to bottom,$Lightslatebluebackground,$Lightroyalbluebackground);
         border-bottom-left-radius: $radius;
         border-bottom-right-radius: $radius;
+        background-color:transparent ;
         @include desktop{
             border-radius: $radius;
             width: 300px;
@@ -54,6 +64,8 @@ $size:130px;
     .bottom{
         @include desktop{
             padding: 1em;
+            width: 300px;
+
         }
         .wrap{
             width: 85%;
@@ -176,9 +188,13 @@ $size:130px;
 .btn{
     margin-block: 1em;
     width: 85%;
+    @include desktop{
+        width: 100%;
+    }
     button{
         border-radius: 30px;
-        padding: .9em 7em;
+        padding: .9em 0;
+        width:100%;
         color: $White;
         font-family: 'Medium';
         background: $Darkgrayblue;
